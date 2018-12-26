@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".HubActivity">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/toolbar_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/hub_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/search_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:layout_gravity="end"
+                android:src="@drawable/ic_search"
+                />
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/header_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/hub_header_padding_vertical"
+        android:paddingBottom="@dimen/hub_header_padding_vertical"
+        android:paddingLeft="@dimen/hub_header_padding_ho"
+        android:paddingStart="@dimen/hub_header_padding_ho"
+        android:paddingEnd="@dimen/hub_header_padding_ho"
+        android:paddingRight="@dimen/hub_header_padding_ho"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_section"
+        app:layout_constraintBottom_toTopOf="@id/hub_recycler_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_left"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.333"
+            />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_right"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.666"
+            />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/missing_call_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:textSize="@dimen/hub_header_number_size"
+            android:textColor="@color/hub_header_number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/missing_call"
+            />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/voice_mail_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12"
+            android:textSize="@dimen/hub_header_number_size"
+            android:textColor="@color/hub_header_number"
+            app:layout_constraintStart_toStartOf="@id/guideline_left"
+            app:layout_constraintBottom_toTopOf="@id/voice_mail"
+            />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/sms_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20"
+            android:textAlignment="textStart"
+            android:gravity="start"
+            android:textSize="@dimen/hub_header_number_size"
+            android:textColor="@color/hub_header_number"
+            app:layout_constraintBottom_toTopOf="@id/sms"
+            app:layout_constraintStart_toStartOf="@id/guideline_right"
+            />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/missing_call"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/hub_missing_call"
+            android:textSize="@dimen/hub_header_text_size"
+            android:textColor="@color/hub_header_text"
+            app:layout_constraintEnd_toStartOf="@+id/voice_mail"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/voice_mail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/hub_voice_mail"
+            android:textSize="@dimen/hub_header_text_size"
+            android:textColor="@color/hub_header_text"
+            app:layout_constraintEnd_toStartOf="@+id/sms"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/missing_call"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/sms"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/hub_sms"
+            android:textSize="@dimen/hub_header_text_size"
+            android:textColor="@color/hub_header_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/voice_mail"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+    </android.support.constraint.ConstraintLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/hub_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toBottomOf="@id/header_section"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</android.support.constraint.ConstraintLayout>

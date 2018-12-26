@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/bar_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/call_detail_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/call_detail_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/call_detail_title"
+                android:textSize="20sp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center"
+                />
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <com.isep.linfeng.custom_views.UserCardView
+        android:id="@+id/caller_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardTitle="Barbara Fuseau"
+        app:cardSubtitle="+7 123 345 48"
+        app:iconUrl="http://kb4images.com/images/barbara-palvin/36223091-barbara-palvin.jpg"
+
+        app:layout_constraintTop_toBottomOf="@id/bar_section"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:layout_marginTop="@dimen/twenty"
+        android:layout_marginBottom="@dimen/twenty"
+        >
+    </com.isep.linfeng.custom_views.UserCardView>
+
+  <android.support.constraint.ConstraintLayout
+      android:id="@+id/transfer_section"
+      android:layout_width="match_parent"
+      android:layout_height="130dp"
+
+      app:layout_constraintTop_toBottomOf="@id/caller_card_view"
+      app:layout_constraintBottom_toTopOf="@id/scenario_section"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+
+      android:layout_marginStart="@dimen/ten"
+      android:layout_marginLeft="@dimen/ten"
+      android:layout_marginBottom="@dimen/ten"
+      android:layout_marginTop="@dimen/ten"
+      >
+      <android.support.v7.widget.AppCompatTextView
+          android:id="@+id/transfer_section_label"
+          android:layout_height="wrap_content"
+          android:layout_width="wrap_content"
+          android:text="@string/transfer"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintBottom_toTopOf="@id/transfer_recycler_view"
+      />
+      <android.support.v7.widget.RecyclerView
+          android:id="@+id/transfer_recycler_view"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+
+          app:layout_constraintTop_toBottomOf="@id/transfer_section_label"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintBottom_toBottomOf="parent"
+          >
+      </android.support.v7.widget.RecyclerView>
+      <View
+          android:id="@+id/transfer_linker"
+          android:layout_width="1dp"
+          android:layout_height="0dp"
+          android:background="@color/light_blue"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintBottom_toBottomOf="parent"
+          />
+  </android.support.constraint.ConstraintLayout>
+
+  <android.support.constraint.ConstraintLayout
+      android:id="@+id/scenario_section"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintTop_toBottomOf="@id/transfer_section"
+      app:layout_constraintBottom_toTopOf="@id/history_section"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+
+      android:layout_marginStart="@dimen/ten"
+      android:layout_marginLeft="@dimen/ten"
+      android:layout_marginBottom="@dimen/ten"
+      >
+      <android.support.v7.widget.AppCompatTextView
+          android:id="@+id/scenario_section_label"
+          android:layout_height="wrap_content"
+          android:layout_width="wrap_content"
+          android:text="@string/scenario"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintBottom_toTopOf="@id/scenario_recycler_view"
+          />
+      <android.support.v7.widget.RecyclerView
+          android:id="@+id/scenario_recycler_view"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+
+          app:layout_constraintTop_toBottomOf="@id/scenario_section_label"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          >
+
+      </android.support.v7.widget.RecyclerView>
+  </android.support.constraint.ConstraintLayout>
+
+  <android.support.constraint.ConstraintLayout
+      android:id="@+id/history_section"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/scenario_section"
+      app:layout_constraintBottom_toTopOf="@id/comment_section"
+
+      android:layout_marginStart="@dimen/ten"
+      android:layout_marginLeft="@dimen/ten"
+      android:layout_marginBottom="@dimen/ten"
+        >
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/history_section_label"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/history"
+            android:layout_marginStart="@dimen/ten"
+            android:layout_marginLeft="@dimen/ten"
+            />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/history_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintTop_toBottomOf="@id/history_section_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+        </android.support.v7.widget.RecyclerView>
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/comment_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/comment"
+        android:textSize="@dimen/info_table_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/history_section"
+
+        android:layout_marginStart="@dimen/ten"
+        android:layout_marginLeft="@dimen/ten"
+        android:layout_marginBottom="@dimen/ten"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/ten"
+        android:layout_marginLeft="@dimen/ten"
+        android:layout_marginEnd="@dimen/ten"
+        android:layout_marginRight="@dimen/ten"
+        android:layout_marginBottom="20dp"
+        />
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HubItemView">
+        <attr name="title" format="string" localization="suggested"/>
+        <attr name="subtitle" format="string" localization="suggested"/>
+        <attr name="hubContent" format="string" localization="suggested"/>
+        <attr name="time" format="string" localization="suggested"/>
+    </declare-styleable>
+
+    <declare-styleable name="UserCardView">
+        <attr name="cardTitle" format="string" localization="suggested"/>
+        <attr name="cardSubtitle" format="string" localization="suggested"/>
+        <attr name="iconUrl" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="InfoTableView">
+        <attr name="tableTitle" format="string"/>
+        <attr name="tableSubtitle" format="string"/>
+        <attr name="tableContent" format="string"/>
+    </declare-styleable>
+</resources>

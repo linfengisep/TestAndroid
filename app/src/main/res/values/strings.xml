@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Hub</string>
+    <string name="hub_sms">SMS</string>
+    <string name="hub_missing_call">MISSED CALLS</string>
+    <string name="hub_voice_mail">VOICE MAILS</string>
+    <string name="call_detail_title">Call \n details</string>
+    <string name="transfer">TRANSFERS</string>
+    <string name="scenario">SCENARIO</string>
+    <string name="history">HISTORY</string>
+    <string name="comment">COMMENTS</string>
+
+</resources>

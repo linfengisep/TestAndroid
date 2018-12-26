@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/hub_item_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:contentDescription="photo"
+        app:layout_constraintEnd_toStartOf="@id/hub_item_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/hub_item_title"
+        app:layout_constraintBottom_toBottomOf="@id/hub_item_title"
+        android:layout_marginLeft="@dimen/ten"
+        android:layout_marginStart="@dimen/ten"
+        />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/hub_item_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:includeFontPadding="false"
+        app:layout_constraintStart_toEndOf="@id/hub_item_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/hub_item_subtitle"
+        app:layout_constraintEnd_toStartOf="@id/hub_item_time_label"
+        tools:text="title"
+        android:layout_marginTop="10dp"
+        />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/hub_item_subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/hub_item_icon"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/hub_item_time_label"
+        tools:text="subtitle"
+        />
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/hub_item_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/hub_item_icon"
+        tools:text="content"
+        android:layout_marginBottom="10dp"
+        />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/hub_item_time_label"
+        android:layout_width="@dimen/thirty"
+        android:layout_height="@dimen/thirty"
+        app:layout_constraintEnd_toStartOf="@id/hub_item_arrow"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
+        tools:text="hier"
+        android:textSize="12sp"
+        android:gravity="center"
+        />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/hub_item_arrow"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:contentDescription="arrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="@dimen/ten"
+        android:layout_marginRight="@dimen/ten"
+        />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/hub_item_star"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:contentDescription="star"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/hub_item_title"
+        app:layout_constraintBottom_toBottomOf="@id/hub_item_title"
+        android:layout_marginEnd="@dimen/ten"
+        android:layout_marginRight="@dimen/ten"
+        />
+
+    <View
+        android:id="@+id/separator"
+        android:layout_height="1dp"
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="@dimen/ten"
+        android:layout_marginLeft="@dimen/ten"
+        android:layout_marginEnd="@dimen/ten"
+        android:layout_marginRight="@dimen/ten"
+        android:background="@color/separator_hub_item"
+        />
+</android.support.constraint.ConstraintLayout>
