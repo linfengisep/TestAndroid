@@ -44,20 +44,20 @@ public class CallDetailActivity extends AppCompatActivity{
         transferRecyclerView.setHasFixedSize(true);
         layoutManagerT = new LinearLayoutManager(this);
         transferRecyclerView.setLayoutManager(layoutManagerT);
-        infoTableAdapterT = new InfoTableAdapter(this,transferList);
+        infoTableAdapterT = new InfoTableAdapter(this,transferList,true);
         transferRecyclerView.setAdapter(infoTableAdapterT);
         scenarioRecyclerView = findViewById(R.id.scenario_recycler_view);
         scenarioRecyclerView.setHasFixedSize(true);
         layoutManagerS = new LinearLayoutManager(this);
         scenarioRecyclerView.setLayoutManager(layoutManagerS);
-        infoTableAdapterS = new InfoTableAdapter(this,transferList);
+        infoTableAdapterS = new InfoTableAdapter(this,transferList,true);
         scenarioRecyclerView.setAdapter(infoTableAdapterS);
 
         historyRecyclerView = findViewById(R.id.history_recycler_view);
         historyRecyclerView.setHasFixedSize(true);
         layoutManagerH = new LinearLayoutManager(this);
         historyRecyclerView.setLayoutManager(layoutManagerH);
-        infoTableAdapterH = new InfoTableAdapter(this,transferList);
+        infoTableAdapterH = new InfoTableAdapter(this,transferList,false);
         historyRecyclerView.setAdapter(infoTableAdapterH);
     }
 

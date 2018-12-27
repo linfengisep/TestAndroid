@@ -17,5 +17,6 @@
         <attr name="tableTitle" format="string"/>
         <attr name="tableSubtitle" format="string"/>
         <attr name="tableContent" format="string"/>
+        <attr name="tablePoint" format="string"/>
     </declare-styleable>
 </resources>

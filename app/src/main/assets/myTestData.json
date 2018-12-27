@@ -1,0 +1,220 @@
+{
+"messageType":"INCOMING",
+"title":"Louise",
+"subTitle":"06 26 97 07 87",
+"content":"support",
+"time":"23/12/2018; 12h23",
+"isStar":true,
+"callDetails":{
+         "callTitle":"Barbara",
+         "callContent":"01 99 23 02 33",
+         "transfers":[
+            {
+               "name":"Monica",
+               "duration":"15 min",
+               "date":"Yesterday,18:11"
+            },
+            {
+               "name":"Rachel",
+               "duration":"30 sec",
+               "date":"Yesterday,18:26"
+            },
+            {
+               "name":"Chandler",
+               "duration":"30 sec",
+               "date":"Yesterday,18:27"
+            }
+         ],
+         "senariaTrip":[
+            {
+               "name":"Monica",
+               "duration":"15 min",
+               "date":"Yesterday,18:11"
+            },
+            {
+               "name":"Rachel",
+               "duration":"30 sec",
+               "date":"Yesterday,18:26"
+            }
+         ],
+         "history":[
+            {
+               "time":"18:11",
+               "type":"Incoming",
+               "duration":"3 min"
+            },
+            {
+               "time":"18:11",
+               "type":"Outgoing",
+               "duration":"3 min"
+            }
+         ],
+         "comment":[
+         ]
+   }
+},
+{
+"messageType":"OUTGOING",
+"title":"Thibaut",
+"subTitle":"06 26 97 07 22",
+"content":"coming here",
+"time":"23/12/2018; 12h23",
+"isStar":false,
+"callDetails":{
+         "callTitle":"Barbara",
+         "callContent":"01 99 23 02 33",
+         "transfers":[
+            {
+               "name":"Monica",
+               "duration":"15 min",
+               "date":"Yesterday,18:11"
+            },
+            {
+               "name":"Rachel",
+               "duration":"30 sec",
+               "date":"Yesterday,18:26"
+            },
+            {
+               "name":"Chandler",
+               "duration":"30 sec",
+               "date":"Yesterday,18:27"
+            }
+         ],
+         "senariaTrip":[
+            {
+               "name":"Monica",
+               "duration":"15 min",
+               "date":"Yesterday,18:11"
+            },
+            {
+               "name":"Rachel",
+               "duration":"30 sec",
+               "date":"Yesterday,18:26"
+            }
+         ],
+         "history":[
+            {
+               "time":"18:11",
+               "type":"Incoming",
+               "duration":"3 min"
+            },
+            {
+               "time":"18:11",
+               "type":"Outgoing",
+               "duration":"3 min"
+            }
+         ],
+         "comment":[
+         ]
+   }
+},
+{
+"messageType":"SMS",
+"title":"John",
+"subTitle":"06 26 97 07 22",
+"content":"coming here",
+"time":"23/12/2018; 12h23",
+"isStar":false,
+"callDetails":{
+         "callTitle":"Barbara",
+         "callContent":"01 99 23 02 33",
+         "transfers":[
+            {
+               "name":"Monica",
+               "duration":"15 min",
+               "date":"Yesterday,18:11"
+            },
+            {
+               "name":"Rachel",
+               "duration":"30 sec",
+               "date":"Yesterday,18:26"
+            },
+            {
+               "name":"Chandler",
+               "duration":"30 sec",
+               "date":"Yesterday,18:27"
+            }
+         ],
+         "senariaTrip":[
+            {
+               "name":"Monica",
+               "duration":"15 min",
+               "date":"Yesterday,18:11"
+            },
+            {
+               "name":"Rachel",
+               "duration":"30 sec",
+               "date":"Yesterday,18:26"
+            }
+         ],
+         "history":[
+            {
+               "time":"18:11",
+               "type":"Incoming",
+               "duration":"3 min"
+            },
+            {
+               "time":"18:11",
+               "type":"Outgoing",
+               "duration":"3 min"
+            }
+         ],
+         "comment":[
+         ]
+   }
+},
+{
+"messageType":"SMS",
+"title":"Monica Geller",
+"subTitle":"06 26 97 07 22",
+"content":"coming here",
+"time":"23/12/2018; 12h23",
+"isStar":false,
+"callDetails":{
+         "callTitle":"Barbara",
+         "callContent":"01 99 23 02 33",
+         "transfers":[
+            {
+               "name":"Monica",
+               "duration":"15 min",
+               "date":"Yesterday,18:11"
+            },
+            {
+               "name":"Rachel",
+               "duration":"30 sec",
+               "date":"Yesterday,18:26"
+            },
+            {
+               "name":"Chandler",
+               "duration":"30 sec",
+               "date":"Yesterday,18:27"
+            }
+         ],
+         "senariaTrip":[
+            {
+               "name":"Monica",
+               "duration":"15 min",
+               "date":"Yesterday,18:11"
+            },
+            {
+               "name":"Rachel",
+               "duration":"30 sec",
+               "date":"Yesterday,18:26"
+            }
+         ],
+         "history":[
+            {
+               "time":"18:11",
+               "type":"Incoming",
+               "duration":"3 min"
+            },
+            {
+               "time":"18:11",
+               "type":"Outgoing",
+               "duration":"3 min"
+            }
+         ],
+         "comment":[
+         ]
+   }
+}

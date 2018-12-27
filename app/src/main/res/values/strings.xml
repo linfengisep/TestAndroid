@@ -4,9 +4,14 @@
     <string name="hub_missing_call">MISSED CALLS</string>
     <string name="hub_voice_mail">VOICE MAILS</string>
     <string name="call_detail_title">Call \n details</string>
+    <string name="filter_title">Filters</string>
     <string name="transfer">TRANSFERS</string>
     <string name="scenario">SCENARIO</string>
     <string name="history">HISTORY</string>
     <string name="comment">COMMENTS</string>
+    <string name="number_text">NUMBERS</string>
+    <string name="ivr">IVR</string>
+    <string name="others">OTHERS</string>
+    <string name="filter_clear">Clears</string>
 
 </resources>

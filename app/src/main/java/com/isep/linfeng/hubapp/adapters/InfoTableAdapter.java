@@ -16,9 +16,11 @@ import java.util.List;
 public class InfoTableAdapter extends RecyclerView.Adapter<InfoTableAdapter.InfoTableViewHolder> {
     private Context context;
     private List<Transfer> data;
-    public InfoTableAdapter(Context context,List<Transfer> data){
+    private boolean isPointVisible;
+    public InfoTableAdapter(Context context,List<Transfer> data,boolean isPointVisible){
         this.context = context;
         this.data = data;
+        this.isPointVisible = isPointVisible;
     }
     @NonNull
     @Override
@@ -42,18 +44,21 @@ public class InfoTableAdapter extends RecyclerView.Adapter<InfoTableAdapter.Info
         private AppCompatTextView tableTitleView;
         private AppCompatTextView tableSubtitleView;
         private AppCompatTextView tableContentView;
+        private AppCompatTextView tablePointView;
 
         InfoTableViewHolder(View itemView) {
             super(itemView);
             tableContentView = itemView.findViewById(R.id.table_content);
             tableTitleView = itemView.findViewById(R.id.table_title);
             tableSubtitleView = itemView.findViewById(R.id.table_subtitle);
+            tablePointView = itemView.findViewById(R.id.table_point);
         }
 
         void setContent(Transfer element){
             tableTitleView.setText(element.getName());
             tableSubtitleView.setText(element.getDuration());
             tableContentView.setText(element.getDate());
+            tablePointView.setVisibility(isPointVisible? View.VISIBLE:View.INVISIBLE);
         }
     }
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -74,15 +75,19 @@
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintBottom_toBottomOf="parent"
-          >
-      </android.support.v7.widget.RecyclerView>
+          />
       <View
           android:id="@+id/transfer_linker"
           android:layout_width="1dp"
           android:layout_height="0dp"
           android:background="@color/light_blue"
-          app:layout_constraintTop_toTopOf="parent"
-          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintTop_toTopOf="@id/transfer_recycler_view"
+          app:layout_constraintBottom_toBottomOf="@id/transfer_recycler_view"
+          android:layout_marginStart="4dp"
+          android:layout_marginLeft="4dp"
+          android:layout_marginTop="13dp"
+          android:layout_marginBottom="13dp"
+          app:layout_constraintStart_toStartOf="parent"
           />
   </android.support.constraint.ConstraintLayout>
 
@@ -116,9 +121,20 @@
           app:layout_constraintTop_toBottomOf="@id/scenario_section_label"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintEnd_toEndOf="parent"
-          >
-
-      </android.support.v7.widget.RecyclerView>
+          />
+      <View
+          android:id="@+id/scenario_linker"
+          android:layout_width="1dp"
+          android:layout_height="0dp"
+          android:background="@color/light_blue"
+          app:layout_constraintTop_toTopOf="@id/scenario_recycler_view"
+          app:layout_constraintBottom_toBottomOf="@id/scenario_recycler_view"
+          android:layout_marginStart="4dp"
+          android:layout_marginLeft="4dp"
+          android:layout_marginTop="13dp"
+          android:layout_marginBottom="13dp"
+          app:layout_constraintStart_toStartOf="parent"
+          />
   </android.support.constraint.ConstraintLayout>
 
   <android.support.constraint.ConstraintLayout
