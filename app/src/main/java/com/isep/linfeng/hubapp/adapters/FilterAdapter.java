@@ -39,10 +39,22 @@ public class FilterAdapter extends RecyclerView.Adapter<FilterAdapter.FilterView
 
     class FilterViewHolder extends RecyclerView.ViewHolder{
         private AppCompatButton filterItemView;
-
+        private boolean isClicked = false;
         FilterViewHolder(View itemView) {
             super(itemView);
             filterItemView = itemView.findViewById(R.id.filter_item);
+            filterItemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(isClicked){
+                        filterItemView.setBackgroundResource(R.drawable.filter_item_bg);
+                        isClicked = false;
+                    }else{
+                        filterItemView.setBackgroundResource(R.drawable.filter_item_bg_blue);
+                        isClicked = true;
+                    }
+                }
+            });
         }
 
         void setContent(String content){

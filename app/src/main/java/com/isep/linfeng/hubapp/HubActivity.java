@@ -29,11 +29,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HubActivity extends AppCompatActivity implements HubRecyclerViewAdapter.HubItemClickListener{
-    private RecyclerView hubRecyclerView;
-    private RecyclerView.Adapter hubAdapter;
-    private RecyclerView.LayoutManager hubLayoutManager;
+    private static final String CALLER_NAME = "CALLER_NAME";
+    private static final String CALLER_NUMBER = "CALLER_NUMBER";
+    private static final String CALLER_PHOTO_URL = "CALLER_PHOTO_URL";
+
     private List<Hub> hubList = new ArrayList<>();
-    private AppCompatImageView searchImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,14 +41,15 @@ public class HubActivity extends AppCompatActivity implements HubRecyclerViewAda
         setContentView(R.layout.activity_hub);
         Toolbar toolbar = findViewById(R.id.hub_toolbar);
         setSupportActionBar(toolbar);
-        searchImageView = findViewById(R.id.search_icon);
+        AppCompatImageView searchImageView= findViewById(R.id.search_icon);
 
-        loadingFakeData();
-        hubRecyclerView = findViewById(R.id.hub_recycler_view);
+        loadingData();
+
+        RecyclerView hubRecyclerView = findViewById(R.id.hub_recycler_view);
         hubRecyclerView.setHasFixedSize(true);
-        hubLayoutManager = new LinearLayoutManager(this);
+        RecyclerView.LayoutManager hubLayoutManager = new LinearLayoutManager(this);
         hubRecyclerView.setLayoutManager(hubLayoutManager);
-        hubAdapter = new HubRecyclerViewAdapter(hubList,getApplicationContext(),HubActivity.this);
+        RecyclerView.Adapter hubAdapter = new HubRecyclerViewAdapter(hubList,getApplicationContext(),HubActivity.this);
         hubRecyclerView.setAdapter(hubAdapter);
 
         searchImageView.setOnClickListener(new View.OnClickListener() {
@@ -60,7 +61,7 @@ public class HubActivity extends AppCompatActivity implements HubRecyclerViewAda
         });
     }
 
-    private void loadingFakeData(){
+    private void loadingData(){
         String data = loadJsonFromAsset();
         Type listType = new TypeToken<ArrayList<Hub>>(){}.getType();
         hubList = new Gson().fromJson(data,listType);
@@ -68,10 +69,12 @@ public class HubActivity extends AppCompatActivity implements HubRecyclerViewAda
 
     @Override
     public void onHubItemClick(int hubIndex) {
-        Toast.makeText(this,"good"+hubIndex,Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this,"item index:"+hubIndex,Toast.LENGTH_SHORT).show();
         Intent callDetailIntent = new Intent(getApplicationContext(),CallDetailActivity.class);
+        callDetailIntent.putExtra(CALLER_NAME,hubList.get(hubIndex).getTitle());
+        callDetailIntent.putExtra(CALLER_NUMBER,hubList.get(hubIndex).getSubTitle());
+        callDetailIntent.putExtra(CALLER_PHOTO_URL,hubList.get(hubIndex).getPhotoUrl());
         startActivity(callDetailIntent);
-
     }
 
     @Override
@@ -85,7 +88,7 @@ public class HubActivity extends AppCompatActivity implements HubRecyclerViewAda
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case android.R.id.home:
-                //startActivity(new Intent(this,CallDetailActivity.class));
+                startActivity(new Intent(this,CallDetailActivity.class));
                 Toast.makeText(this,"home click",Toast.LENGTH_SHORT).show();
                 finish();
                 break;
@@ -100,7 +103,7 @@ public class HubActivity extends AppCompatActivity implements HubRecyclerViewAda
     }
 
     private String loadJsonFromAsset(){
-        String json = null;
+        String json;
         InputStream is = null;
         try{
             is = this.getAssets().open("hubData.json");
@@ -120,7 +123,6 @@ public class HubActivity extends AppCompatActivity implements HubRecyclerViewAda
                 }
             }
         }
-
         return json;
     }
 }

@@ -16,8 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CallDetailActivity"/>
-        <activity android:name=".FilterActivity"/>
+        <activity android:name=".CallDetailActivity" android:launchMode="singleInstance"/>
+        <activity android:name=".FilterActivity" android:launchMode="singleInstance"/>
     </application>
 
 </manifest>

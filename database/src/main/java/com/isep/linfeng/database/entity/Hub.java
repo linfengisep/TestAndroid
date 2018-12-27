@@ -10,10 +10,19 @@ public class Hub {
     private String content;
     private String time;
     private Boolean isStar;
+    private String photoUrl;
     private CallDetails callDetails;
     private transient Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
-    public Hub(String messageType, String title, String subTitle, String content, String time, Boolean isStar, CallDetails callDetails) {
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
+    }
+
+    public Hub(String messageType, String title, String subTitle, String content, String time, Boolean isStar, String photoUrl, CallDetails callDetails) {
         this.messageType = messageType;
         this.title = title;
         this.subTitle = subTitle;
@@ -21,6 +30,8 @@ public class Hub {
         this.time = time;
         this.isStar = isStar;
         this.callDetails = callDetails;
+        this.photoUrl = photoUrl;
+
     }
 
     public String getMessageType() {

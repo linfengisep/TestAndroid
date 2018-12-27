@@ -1,1 +1,206 @@
-[{"messageType":"Incoming","title":"Louise","subTitle":"+7 12 34 56 78","content":"John answerd","time":"16:32","isStar":false,"callDetails":{"callTitle":"Barbara","callContent":"+7 12 34 56 78","transfers":[{"name":"LA","duration":"3 ms","date":"Hier"},{"name":"LA","duration":"3 ms","date":"Hier"},{"name":"LA","duration":"3 ms","date":"Hier"}],"senariaTrip":[{},{},{}],"history":[{"time":"3 second","type":"incoming","duration":"3 heures"},{"time":"3 second","type":"incoming","duration":"3 heures"},{"time":"3 second","type":"incoming","duration":"3 heures"}],"comment":[{"comment":"journey is good"},{"comment":"journey is good"},{"comment":"journey is good"}]}},{"messageType":"Outgoing","title":"Lee","subTitle":"+7 12 34 56 78","content":"Ok j\u0027arrive","time":"10:39","isStar":true,"callDetails":{"callTitle":"Barbara","callContent":"+7 12 34 56 78","transfers":[],"senariaTrip":[],"history":[],"comment":[]}},{"messageType":"SMS","title":"John","subTitle":"+7 12 34 56 78","content":"support is comming","time":"15:02","isStar":false,"callDetails":{"callTitle":"Barbara","callContent":"+7 12 34 56 78","transfers":[],"senariaTrip":[],"history":[],"comment":[]}}]
+[
+   {
+      "messageType":"Incoming",
+      "title":"Kate Winslet",
+      "subTitle":"+7 12 34 56 78",
+      "content":"John answerd",
+      "time":"16:32",
+      "isStar":false,
+      "photoUrl":"https://secure.i.telegraph.co.uk/multimedia/archive/03390/winslet_3390757b.jpg",
+      "callDetails":{
+         "callTitle":"Kate Winslet",
+         "callContent":"+7 12 34 56 78",
+         "transfers":[
+            {
+               "name":"Monica",
+               "duration":"15 m",
+               "date":"Hier"
+            },
+            {
+               "name":"Rachel",
+               "duration":"30 sec",
+               "date":"Hier"
+            },
+            {
+               "name":"Chandler",
+               "duration":"30 sec",
+               "date":"Hier"
+            },
+            {
+               "name":"LA",
+               "duration":"3 ms",
+               "date":"Hier"
+            },
+            {
+               "name":"LA",
+               "duration":"3 ms",
+               "date":"Hier"
+            }
+         ],
+         "senariaTrip":[
+            {
+               "name":"Tech Support",
+               "duration":"15 min",
+               "date":"Yesterday"
+            },
+            {
+               "name":"Service",
+               "duration":"30 sec",
+               "date":"Yesterday"
+            },
+            {
+               "name":"Tech Support",
+               "duration":"15 min",
+               "date":"Yesterday"
+            },
+            {
+               "name":"Tech Support",
+               "duration":"15 min",
+               "date":"Yesterday"
+            }
+         ],
+         "history":[
+            {
+               "time":"18:11",
+               "type":"incoming",
+               "duration":"3 min"
+            },
+            {
+               "time":"16:05",
+               "type":"outgoing",
+               "duration":"32 sec"
+            },
+            {
+               "time":"3 second",
+               "type":"incoming",
+               "duration":"3 heures"
+            },
+            {
+               "time":"3 second",
+               "type":"incoming",
+               "duration":"3 heures"
+            }
+         ],
+         "comment":[
+            {
+               "comment":"journey is good"
+            },
+            {
+               "comment":"journey is good"
+            },
+            {
+               "comment":"journey is good"
+            }
+         ]
+      }
+   },
+   {
+      "messageType":"Outgoing",
+      "title":"Kristen Stewart",
+      "subTitle":"+7 12 34 56 78",
+      "content":"to +7 123 4567",
+      "time":"10:39",
+      "isStar":true,
+      "photoUrl":"https://dajlznucrzlgk.cloudfront.net/news/wp-content/uploads/Kristen-Stewart-Movies-e1426917199616-500x343.jpg",
+      "callDetails":{
+         "callTitle":"Kristen Stewart",
+         "callContent":"+7 12 34 56 78",
+         "transfers":[
+
+         ],
+         "senariaTrip":[
+
+         ],
+         "history":[
+
+         ],
+         "comment":[
+
+         ]
+      }
+   },
+   {
+      "messageType":"SMS",
+      "title":"Jennifer Lawrence",
+      "subTitle":"+7 12 34 56 78",
+      "content":"support is comming",
+      "time":"15:02",
+      "isStar":false,
+      "photoUrl":"https://spy.nzherald.co.nz/media/71697/scczen_ap170712065451_640x320-jpg.jpg?mode=crop&width=675&height=379&quality=80&scale=both",
+      "callDetails":{
+         "callTitle":"Jennifer Lawrence",
+         "callContent":"+7 12 34 56 78",
+         "transfers":[
+
+         ],
+         "senariaTrip":[
+
+         ],
+         "history":[
+
+         ],
+         "comment":[
+
+         ]
+      }
+   },
+   {
+      "messageType":"missed",
+      "title":"Barbara Fuseau",
+      "subTitle":"+7 12 34 56 78",
+      "content":"Hi how are you?",
+      "time":"16:32",
+      "isStar":false,
+      "photoUrl":"http://kb4images.com/images/barbara-palvin/36223091-barbara-palvin.jpg",
+      "callDetails":{
+         "callTitle":"Barbara Fuseau",
+         "callContent":"+7 12 34 56 78",
+         "transfers":[
+            {
+               "name":"Monica",
+               "duration":"15 m",
+               "date":"Hier"
+            },
+            {
+               "name":"Rachel",
+               "duration":"30 sec",
+               "date":"Hier"
+            },
+            {
+               "name":"Chandler",
+               "duration":"30 sec",
+               "date":"Hier"
+            }
+         ],
+         "senariaTrip":[
+            {
+               "name":"Tech Support",
+               "duration":"15 min",
+               "date":"Yesterday"
+            },
+            {
+               "name":"Service",
+               "duration":"30 sec",
+               "date":"Yesterday"
+            }
+         ],
+         "history":[
+            {
+               "time":"18:11",
+               "type":"incoming",
+               "duration":"3 min"
+            },
+            {
+               "time":"16:05",
+               "type":"outgoing",
+               "duration":"32 sec"
+            }
+         ],
+         "comment":[
+            {
+               "comment":"journey is good"
+            }
+         ]
+      }
+   }
+]

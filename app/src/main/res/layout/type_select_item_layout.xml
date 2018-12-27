@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/ten"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.isep.linfeng.custom_views.TypeSelectionView
+        android:id="@+id/type_select_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:typeText=""
+        />
+</android.support.constraint.ConstraintLayout>

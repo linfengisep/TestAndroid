@@ -12,6 +12,12 @@ public class ScenarioTrip {
     private String date;
     private transient Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
+    public ScenarioTrip(String name, String duration, String date) {
+        this.name = name;
+        this.duration = duration;
+        this.date = date;
+    }
+
     public String getName() {
         return name;
     }

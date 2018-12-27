@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutCompat;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -12,14 +14,13 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.isep.linfeng.hubapp.adapters.FilterAdapter;
+import com.isep.linfeng.hubapp.adapters.TypeAdapter;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class FilterActivity extends AppCompatActivity {
     private List<String> data;
-    private RecyclerView recyclerViewN,recyclerViewI,recyclerViewO;
-    private RecyclerView.Adapter filterAdapterN,filterAdapterI,filterAdapterO;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +42,8 @@ public class FilterActivity extends AppCompatActivity {
     }
 
     private void initRecyclerViews(){
+        RecyclerView recyclerViewN,recyclerViewI,recyclerViewO;
+        RecyclerView.Adapter filterAdapterN,filterAdapterI,filterAdapterO;
         recyclerViewN = findViewById(R.id.numbers_recycler_view);
         recyclerViewN.setHasFixedSize(true);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this,3);
@@ -57,9 +60,9 @@ public class FilterActivity extends AppCompatActivity {
 
         recyclerViewO = findViewById(R.id.others_recycler_view);
         recyclerViewO.setHasFixedSize(true);
-        GridLayoutManager gridLayoutManagerO = new GridLayoutManager(this,3);
-        recyclerViewO.setLayoutManager(gridLayoutManagerO);
-        filterAdapterO = new FilterAdapter(data,getApplicationContext());
+        LinearLayoutManager typeLinearLayoutManager = new LinearLayoutManager(this);
+        recyclerViewO.setLayoutManager(typeLinearLayoutManager);
+        filterAdapterO = new TypeAdapter(this,Arrays.asList("FAX","SMS","Incoming","Outgoing","Missed","Voicemail","Starred"));
         recyclerViewO.setAdapter(filterAdapterO);
 
     }
@@ -74,7 +77,9 @@ public class FilterActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case android.R.id.home:
-                startActivity(new Intent(this,HubActivity.class));
+                Intent hubIntent = new Intent(this,HubActivity.class);
+                hubIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(hubIntent);
                 finish();
                 break;
             case R.id.filter_clear:

@@ -18,7 +18,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/filter_title"
-                android:textColor="@color/black"
+                android:textColor="@android:color/black"
                 android:textSize="20sp"
                 android:gravity="center_horizontal"
                 android:layout_gravity="center"
@@ -100,19 +100,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivr_section"
+        app:layout_constraintBottom_toBottomOf="parent"
 
         android:layout_marginStart="@dimen/ten"
         android:layout_marginLeft="@dimen/ten"
         android:layout_marginBottom="@dimen/ten"
+        android:layout_marginTop="@dimen/ten"
         >
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/others_section_label"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="@string/others"
-            android:layout_marginBottom="@dimen/ten"
+            android:layout_marginBottom="@dimen/twenty"
             android:layout_marginStart="@dimen/ten"
             android:layout_marginLeft="@dimen/ten"
+            app:layout_constraintTop_toTopOf="parent"
             />
         <android.support.v7.widget.RecyclerView
             android:id="@+id/others_recycler_view"
@@ -121,6 +124,7 @@
             app:layout_constraintTop_toBottomOf="@id/others_section_label"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             >
         </android.support.v7.widget.RecyclerView>
     </android.support.constraint.ConstraintLayout>

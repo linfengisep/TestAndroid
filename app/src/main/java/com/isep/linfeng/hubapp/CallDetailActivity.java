@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.isep.linfeng.custom_views.UserCardView;
 import com.isep.linfeng.database.entity.Transfer;
 import com.isep.linfeng.hubapp.adapters.InfoTableAdapter;
 
@@ -19,14 +20,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CallDetailActivity extends AppCompatActivity{
-    private RecyclerView transferRecyclerView,scenarioRecyclerView,historyRecyclerView;
-    private RecyclerView.LayoutManager layoutManagerT,layoutManagerS,layoutManagerH;
-    private RecyclerView.Adapter infoTableAdapterT,infoTableAdapterS,infoTableAdapterH;
+    private static final String CALLER_NAME = "CALLER_NAME";
+    private static final String CALLER_NUMBER = "CALLER_NUMBER";
+    private static final String CALLER_PHOTO_URL = "CALLER_PHOTO_URL";
+
+    private UserCardView userCardView;
+
     private List<Transfer> transferList = new ArrayList<>();
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_call_detail);
+        userCardView = findViewById(R.id.caller_card_view);
+        getExtraData();
         Fresco.initialize(this);
         loadingFakeData();
         initRecyclerViews();
@@ -39,13 +45,25 @@ public class CallDetailActivity extends AppCompatActivity{
         }
     }
 
+    private void getExtraData(){
+        Intent data = getIntent();
+        userCardView.setTitle(data.getStringExtra(CALLER_NAME));
+        userCardView.setSubtitle(data.getStringExtra(CALLER_NUMBER));
+        userCardView.setIconUrl(data.getStringExtra(CALLER_PHOTO_URL));
+    }
+
     private void initRecyclerViews(){
+        RecyclerView transferRecyclerView,scenarioRecyclerView,historyRecyclerView;
+        RecyclerView.LayoutManager layoutManagerT,layoutManagerS,layoutManagerH;
+        RecyclerView.Adapter infoTableAdapterT,infoTableAdapterS,infoTableAdapterH;
+
         transferRecyclerView = findViewById(R.id.transfer_recycler_view);
         transferRecyclerView.setHasFixedSize(true);
         layoutManagerT = new LinearLayoutManager(this);
         transferRecyclerView.setLayoutManager(layoutManagerT);
         infoTableAdapterT = new InfoTableAdapter(this,transferList,true);
         transferRecyclerView.setAdapter(infoTableAdapterT);
+
         scenarioRecyclerView = findViewById(R.id.scenario_recycler_view);
         scenarioRecyclerView.setHasFixedSize(true);
         layoutManagerS = new LinearLayoutManager(this);
@@ -62,9 +80,9 @@ public class CallDetailActivity extends AppCompatActivity{
     }
 
     private void loadingFakeData(){
-        Transfer transfer = new Transfer("Paris","3 heures","Hier");
-        Transfer transfer1 = new Transfer("Londres","2 heures","25/12/2018");
-        Transfer transfer2 = new Transfer("Madrid","1.5heures","11/12/2018");
+        Transfer transfer = new Transfer("Monica","15 min","Hier");
+        Transfer transfer1 = new Transfer("Rachel","30 sec","25/12/2018");
+        Transfer transfer2 = new Transfer("Chandeler","30 sec","11/12/2018");
         transferList.add(transfer);
         transferList.add(transfer2);
         transferList.add(transfer1);
@@ -81,7 +99,9 @@ public class CallDetailActivity extends AppCompatActivity{
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case android.R.id.home:
-                startActivity(new Intent(this,HubActivity.class));
+                Intent hubIntent  = new Intent(this,HubActivity.class);
+                hubIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(hubIntent);
                 finish();
                 break;
             case R.id.call_detail_setting:
