@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
 import android.support.constraint.ConstraintLayout;
+import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatTextView;
 import android.text.TextPaint;
 import android.util.AttributeSet;
@@ -21,8 +22,8 @@ public class InfoTableView extends ConstraintLayout {
     private AppCompatTextView tableTitleView;
     private AppCompatTextView tableSubtitleView;
     private AppCompatTextView tableContentView;
-    private AppCompatTextView tablePointView;
-    private String title,subtitle,content,number;
+    private AppCompatButton tablePointView;
+    private String title,subtitle,content;
 
     public InfoTableView(Context context) {
         this(context, null);
@@ -53,7 +54,6 @@ public class InfoTableView extends ConstraintLayout {
             title = a.getString(R.styleable.InfoTableView_tableTitle);
             subtitle = a.getString(R.styleable.InfoTableView_tableSubtitle);
             content = a.getString(R.styleable.InfoTableView_tableContent);
-            number = a.getString(R.styleable.InfoTableView_tablePoint);
             setTitle(title);
             setSubtitle(subtitle);
             setContent(content);
@@ -82,13 +82,13 @@ public class InfoTableView extends ConstraintLayout {
 
     public void setPoint(String number,int visibility,int size){
         int dpSize = DpUtil.dpToPixel(size,getContext());
-        this.number = number;
         this.tablePointView.setVisibility(visibility);
         this.tablePointView.setText(number);
+
         ViewGroup.LayoutParams params = this.tablePointView.getLayoutParams();
         params.height = dpSize;
         params.width = dpSize;
-        this.setLayoutParams(params);
+        tablePointView.setLayoutParams(params);
     }
     private void redrawView() {
         requestLayout();

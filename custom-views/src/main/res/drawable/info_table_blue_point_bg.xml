@@ -2,6 +2,8 @@
 <shape android:shape="oval" xmlns:android="http://schemas.android.com/apk/res/android">
     <size android:width="10dp"
         android:height="10dp"/>
-    <solid android:color="@android:color/holo_blue_bright"/>
+    <size android:width="@dimen/ten" android:height="@dimen/ten"/>
+    <solid android:color="@color/hub_default_color"/>
     <corners android:radius="5dp"/>
 </shape>
+

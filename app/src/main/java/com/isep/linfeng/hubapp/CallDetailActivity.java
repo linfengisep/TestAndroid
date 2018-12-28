@@ -9,11 +9,14 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.isep.linfeng.custom_views.UserCardView;
 import com.isep.linfeng.database.entity.Transfer;
+import com.isep.linfeng.hubapp.Utils.DpUtil;
 import com.isep.linfeng.hubapp.adapters.InfoTableAdapter;
 
 import java.util.ArrayList;
@@ -61,21 +64,24 @@ public class CallDetailActivity extends AppCompatActivity{
         transferRecyclerView.setHasFixedSize(true);
         layoutManagerT = new LinearLayoutManager(this);
         transferRecyclerView.setLayoutManager(layoutManagerT);
-        infoTableAdapterT = new InfoTableAdapter(this,transferList,true);
+        infoTableAdapterT = new InfoTableAdapter(this,transferList,true,0);
         transferRecyclerView.setAdapter(infoTableAdapterT);
 
         scenarioRecyclerView = findViewById(R.id.scenario_recycler_view);
         scenarioRecyclerView.setHasFixedSize(true);
         layoutManagerS = new LinearLayoutManager(this);
         scenarioRecyclerView.setLayoutManager(layoutManagerS);
-        infoTableAdapterS = new InfoTableAdapter(this,transferList,true);
+        infoTableAdapterS = new InfoTableAdapter(this,transferList,true,20);
         scenarioRecyclerView.setAdapter(infoTableAdapterS);
+        View scenarioLinker = findViewById(R.id.scenario_linker);
+        ViewGroup.MarginLayoutParams params =(ViewGroup.MarginLayoutParams)scenarioLinker.getLayoutParams();
+        params.leftMargin = DpUtil.dpToPixel(10,this);
 
         historyRecyclerView = findViewById(R.id.history_recycler_view);
         historyRecyclerView.setHasFixedSize(true);
         layoutManagerH = new LinearLayoutManager(this);
         historyRecyclerView.setLayoutManager(layoutManagerH);
-        infoTableAdapterH = new InfoTableAdapter(this,transferList,false);
+        infoTableAdapterH = new InfoTableAdapter(this,transferList,false,0);
         historyRecyclerView.setAdapter(infoTableAdapterH);
     }
 

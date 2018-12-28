@@ -133,11 +133,12 @@
           android:background="@color/hub_default_color"
           app:layout_constraintTop_toTopOf="@id/scenario_recycler_view"
           app:layout_constraintBottom_toBottomOf="@id/scenario_recycler_view"
+          app:layout_constraintStart_toStartOf="parent"
+
           android:layout_marginStart="4dp"
           android:layout_marginLeft="4dp"
           android:layout_marginTop="13dp"
           android:layout_marginBottom="13dp"
-          app:layout_constraintStart_toStartOf="parent"
           />
   </android.support.constraint.ConstraintLayout>
 
