@@ -11,11 +11,11 @@ buildscript {
     ]
     ext.versions = [
             'arch': '1.0.0',
+            'dagger': '2.14.1',
             'retrofit': '2.3.0',
             'rxbinding': '2.1.1',
             'constraintlayout':'1.1.2',
             'supportLibrary': '27.1.1',
-            'supportCoreUtil':'27.1.1',
     ]
 
     ext.deps=[
@@ -50,6 +50,10 @@ buildscript {
             'rxbinding': [
                     'platform': "com.jakewharton.rxbinding2:rxbinding:${versions.rxbinding}",
                     'appcompatV7': "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:${versions.rxbinding}",
+            ],
+            'dagger': [
+                    'runtime' : "com.google.dagger:dagger:${versions.dagger}",
+                    'compiler': "com.google.dagger:dagger-compiler:${versions.dagger}",
             ],
             'stetho':[
                     'stetho':'com.facebook.stetho:stetho:1.5.0',

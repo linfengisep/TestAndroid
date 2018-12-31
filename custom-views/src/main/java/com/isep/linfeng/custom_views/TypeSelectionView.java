@@ -9,7 +9,6 @@ import android.util.AttributeSet;
 
 public class TypeSelectionView extends ConstraintLayout {
     private AppCompatTextView typeView;
-    private AppCompatButton btnView;
     private String type;
 
     public TypeSelectionView(Context context) {
@@ -31,7 +30,6 @@ public class TypeSelectionView extends ConstraintLayout {
         inflate(getContext(), R.layout.type_selection_view, this);
 
         typeView = findViewById(R.id.type_text);
-        btnView = findViewById(R.id.type_button);
 
         final TypedArray a = getContext().obtainStyledAttributes(
                 attrs, R.styleable.TypeSelectionView, defStyle, 0);

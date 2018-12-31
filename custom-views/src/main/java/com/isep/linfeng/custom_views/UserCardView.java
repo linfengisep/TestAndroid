@@ -9,15 +9,11 @@ import android.util.AttributeSet;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.view.SimpleDraweeView;
 
-/**
- * TODO: document your custom view class.
- */
 public class UserCardView extends ConstraintLayout {
     private SimpleDraweeView iconImageView;
     private AppCompatTextView titleView;
     private AppCompatTextView subtitleView;
 
-    private String titleText;
     private String subtitleText;
     private String iconUrl;
 
@@ -46,7 +42,7 @@ public class UserCardView extends ConstraintLayout {
         final TypedArray a = getContext().obtainStyledAttributes(
                 attrs, R.styleable.UserCardView, defStyle, 0);
         try{
-            titleText = a.getString(R.styleable.UserCardView_cardTitle);
+            String titleText = a.getString(R.styleable.UserCardView_cardTitle);
             subtitleText = a.getString(R.styleable.UserCardView_cardSubtitle);
             iconUrl = a.getString(R.styleable.UserCardView_iconUrl);
             setTitle(titleText);

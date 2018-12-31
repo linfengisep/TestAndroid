@@ -26,4 +26,9 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api deps.dagger.runtime
+    annotationProcessor deps.dagger.compiler
+
+    api deps.android.arch.room.runtime
+    api deps.android.arch.room.rxjava
 }

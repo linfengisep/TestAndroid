@@ -27,4 +27,6 @@ dependencies {
     api deps.android.arch.lifecycle
     api deps.android.support.recyclerView
     api deps.android.support.constraintLayout
+    api deps.dagger.runtime
+    annotationProcessor deps.dagger.compiler
 }

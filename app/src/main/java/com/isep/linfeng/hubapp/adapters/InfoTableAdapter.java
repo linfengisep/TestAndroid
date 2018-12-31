@@ -63,13 +63,14 @@ public class InfoTableAdapter extends RecyclerView.Adapter<InfoTableAdapter.Info
         }
 
         void setContent(Transfer element,int position){
-            tableTitleView.setText(element.getName());
-            tableSubtitleView.setText(element.getDuration());
-            tableContentView.setText(element.getDate());
             tablePointView.setVisibility(isPointVisible? View.VISIBLE:View.INVISIBLE);
             if(size !=0){
                 infoTableView.setPoint(String.format(Locale.getDefault(),"%d",position),View.VISIBLE,size);
             }
+                tableTitleView.setText(element.getName());
+                tableSubtitleView.setText(element.getDuration());
+                tableContentView.setText(element.getDate());
+
         }
     }
 }
