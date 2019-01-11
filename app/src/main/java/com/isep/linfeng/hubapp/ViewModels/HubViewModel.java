@@ -1,29 +1,30 @@
 package com.isep.linfeng.hubapp.ViewModels;
-
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
-
-import com.isep.linfeng.database.roomDB.HubDatabase;
-import com.isep.linfeng.database.entity.Hub;
-
-import java.util.List;
-
+import com.isep.linfeng.database.di.DbComponent;
 import javax.inject.Inject;
 
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.schedulers.Schedulers;
+
 public class HubViewModel extends ViewModel {
+    private DbComponent dbComponent;
     @Inject
-    private HubDatabase hubDatabase;
-    private MutableLiveData<List<Hub>> hubs;
-    public LiveData<List<Hub>> getAll(){
-        if(hubs !=null){
-            hubs = new MutableLiveData<>();
-            loadHubs();
-        }
-        return hubs;
+    public HubViewModel(DbComponent dbComponent){
+        this.dbComponent = dbComponent;
+    }
+/*
+    private void loadHubs(){
+        compositeDisposable.add(
+            dbComponent.hubDao()
+                 .getAll()
+                 .observeOn(AndroidSchedulers.mainThread())
+                 .subscribeOn(Schedulers.io())
+                 .subscribe(hubs-> {
+
+                        })
+            );
     }
 
-    private void loadHubs(){
-        hubDatabase.hubDao().getAll();
-    }
+*/
 }

@@ -51,6 +51,10 @@ buildscript {
                     'platform': "com.jakewharton.rxbinding2:rxbinding:${versions.rxbinding}",
                     'appcompatV7': "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:${versions.rxbinding}",
             ],
+            'reactivex': [
+                    'java': 'io.reactivex.rxjava2:rxjava:2.1.7',
+                    'android': 'io.reactivex.rxjava2:rxandroid:2.0.1',
+            ],
             'dagger': [
                     'runtime' : "com.google.dagger:dagger:${versions.dagger}",
                     'compiler': "com.google.dagger:dagger-compiler:${versions.dagger}",

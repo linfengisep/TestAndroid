@@ -14,12 +14,8 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.isep.linfeng.database.entity.CallDetails;
-import com.isep.linfeng.database.entity.Comment;
-import com.isep.linfeng.database.entity.History;
 import com.isep.linfeng.database.entity.Hub;
-import com.isep.linfeng.database.entity.ScenarioTrip;
-import com.isep.linfeng.database.entity.Transfer;
+import com.isep.linfeng.hubapp.ViewModels.HubViewModel;
 import com.isep.linfeng.hubapp.adapters.HubRecyclerViewAdapter;
 
 import java.io.IOException;
@@ -28,12 +24,20 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
+import io.reactivex.disposables.CompositeDisposable;
+
 public class HubActivity extends AppCompatActivity implements HubRecyclerViewAdapter.HubItemClickListener{
     private static final String CALLER_NAME = "CALLER_NAME";
     private static final String CALLER_NUMBER = "CALLER_NUMBER";
     private static final String CALLER_PHOTO_URL = "CALLER_PHOTO_URL";
 
     private List<Hub> hubList = new ArrayList<>();
+    @Inject
+    private HubViewModel hubViewModel;
+    protected CompositeDisposable compositeDisposable = new CompositeDisposable();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +47,7 @@ public class HubActivity extends AppCompatActivity implements HubRecyclerViewAda
         setSupportActionBar(toolbar);
         AppCompatImageView searchImageView= findViewById(R.id.search_icon);
 
-        loadingData();
+        insertDataToDBRoom();
 
         RecyclerView hubRecyclerView = findViewById(R.id.hub_recycler_view);
         hubRecyclerView.setHasFixedSize(true);
@@ -61,9 +65,12 @@ public class HubActivity extends AppCompatActivity implements HubRecyclerViewAda
         });
     }
 
-    private void loadingData(){
+    private void insertDataToDBRoom(){
         String data = loadJsonFromAsset();
         Type listType = new TypeToken<ArrayList<Hub>>(){}.getType();
+        compositeDisposable.add(
+
+        );
         hubList = new Gson().fromJson(data,listType);
     }
 
@@ -124,5 +131,11 @@ public class HubActivity extends AppCompatActivity implements HubRecyclerViewAda
             }
         }
         return json;
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        compositeDisposable.clear();
     }
 }

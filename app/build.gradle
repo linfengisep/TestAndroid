@@ -11,10 +11,20 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+
+        debug {
+            buildConfigField "String", "DATABASE_NAME", "\"hub_db\""
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "DATABASE_NAME", "\"hub_db\""
         }
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
     }
 }
 
@@ -23,6 +33,7 @@ dependencies {
     api project(':database')
     api fileTree(include: ['*.jar'], dir: 'libs')
     api deps.gson.gson
+    api deps.reactivex.android
     api deps.fresco
     api deps.android.arch.lifecycle
     api deps.android.support.recyclerView

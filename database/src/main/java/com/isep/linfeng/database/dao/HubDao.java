@@ -9,10 +9,12 @@ import com.isep.linfeng.database.entity.Hub;
 
 import java.util.List;
 
+import io.reactivex.Flowable;
+
 @Dao
 public interface HubDao {
     @Query("SELECT * FROM hub")
-    List<Hub> getAll();
+    Flowable<List<Hub>> getAll();
     @Query("SELECT * FROM hub WHERE id = (:hubId) ")
     Hub getHubById(int hubId);
 
